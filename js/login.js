@@ -14,7 +14,7 @@ document
     // wrong way to check, this is temporary, should not do like this
     if (phoneNumber === "5" && pinNumber === "1234") {
       console.log("you are logged in");
-      window.location.href = '/home.html';
+      window.location.href = './home.html';
     //   step - 5 --> allow user to use the website
 
     } 
