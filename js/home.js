@@ -4,6 +4,8 @@
  * add event handler
  * prevent page reload after form submit
  * get money to be added to the account balance
+ * get the pin number
+ * verify the pin number
  * 
  */
 
@@ -18,7 +20,24 @@ document.getElementById('btn-add-money')
 
     // get the pin number provided
     const pinNumberInput = document.getElementById('input-pin-number').value ;
-    console.log(addMoneyInput, pinNumberInput)
     
     
+    // verify the pin number
+    // wrong way to validate pin number. should not use in future
+    if(pinNumberInput === '1234'){
+        // get the current balance
+        const balance = document.getElementById('account-balance').innerText ;
+        
+        // add addMoneyInput with balance
+        const addMoneyNumber = parseFloat(addMoneyInput);
+        const balanceNumber = parseFloat(balance);
+        const newBalance = balanceNumber + addMoneyNumber;
+        
+        // update the balance in the UI
+        document.getElementById('account-balance').innerText = newBalance ;
+
+    }
+    else{
+        alert('Failed to add money!')
+    }
 })
