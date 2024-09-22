@@ -18,8 +18,12 @@ document.getElementById('btn-add-money')
     // get money to be added to the account balance
     const addMoneyInput = document.getElementById('input-add-money').value ;
 
+    document.getElementById('input-add-money').value = '';
+
     // get the pin number provided
     const pinNumberInput = document.getElementById('input-pin-number').value ;
+
+    document.getElementById('input-pin-number').value = '';
     
     
     // verify the pin number
@@ -29,6 +33,7 @@ document.getElementById('btn-add-money')
         const balance = document.getElementById('account-balance').innerText ;
         
         // add addMoneyInput with balance
+        // convert string to number
         const addMoneyNumber = parseFloat(addMoneyInput);
         const balanceNumber = parseFloat(balance);
         const newBalance = balanceNumber + addMoneyNumber;
